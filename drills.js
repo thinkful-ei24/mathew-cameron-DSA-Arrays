@@ -57,4 +57,38 @@ function filter(arr){
   return newArr;
 };
 
-console.log(filter([1, 5, 7, 3, 9]));
+// console.log(filter([1, 5, 7, 3, 9]));
+
+//Max sum in the array
+// largestNum = 0;
+// loop starting with 4 
+//  loop again, starting with 6
+//  if 4 + 6 > largestNum, largestNum = 10
+// return largestNum
+// 4 -> 4, 6; 4, 6, -3; 
+// 6 -> 6, -3; 6, -3, 5, etc;
+
+function maxSum(arr) {
+  let largestNum = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    let sum = arr[i];
+
+    if (sum >= largestNum ) {
+      largestNum = sum;
+    }
+
+    for (let j = i+1; j < arr.length; j++) {
+      sum += arr[j];
+
+      if (sum >= largestNum ) {
+        largestNum = sum;
+      }
+    }
+  }
+
+  return largestNum;
+}
+
+// console.log(maxSum([-53,-4,-6,-3,-5,-2,-1, 722]));
+
