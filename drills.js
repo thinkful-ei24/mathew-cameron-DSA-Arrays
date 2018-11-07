@@ -44,4 +44,17 @@ function urlIfy(str) {
   return newStrArray.join('');
 }
 
-console.log(urlIfy('this is A test '));
+// console.log(urlIfy('this is A test '));
+
+// Filtering an Array
+function filter(arr){
+  const newArr = [];
+  arr.forEach(num => {
+    if(num >= 5){
+      newArr.push(num);
+    }
+  })
+  return newArr;
+};
+
+console.log(filter([1, 5, 7, 3, 9]));
