@@ -26,6 +26,8 @@ function main(){
 
 // main();
 
+
+//////////////////////////////////
 // URLify a String
 function urlIfy(str) {
   const strArray = str.split('');
@@ -47,6 +49,8 @@ function urlIfy(str) {
 // Complexity: O(n)
 // console.log(urlIfy('this is A test '));
 
+
+//////////////////////////////////
 // Filtering an Array
 function filter(arr){
   const newArr = [];
@@ -135,5 +139,36 @@ function merge(arr1, arr2){
 
 
 
+//////////////////////////////////
+// Remove Characters
+//  loop through string by character
+//    loop through remove array characters
+//      if Strchar === RemoveArrayChar
+//        break;
+//  return newString
 //
 
+function removeCharacters(string, removalString) {
+  let newString = '';
+
+  for (let i = 0; i < string.length; i++) {
+    let found = false;
+
+    for (let j = 0; j < removalString.length; j++) {
+      if (string[i] === removalString[j]) {
+        found = true;
+        break;
+      } 
+    }
+
+    if (!found) {
+      newString += string[i];
+    }
+  }
+
+  return newString;
+}
+
+// O(n^2)
+
+// console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
