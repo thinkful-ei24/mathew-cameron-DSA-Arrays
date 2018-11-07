@@ -172,3 +172,34 @@ function removeCharacters(string, removalString) {
 // O(n^2)
 
 // console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+
+// Product
+
+function product(arr){
+  const zeroFind = arr.indexOf(0);
+  if(zeroFind !== -1){
+    let prod = 1;
+    for(let i=0; i<arr.length; i++){
+      if(i !== zeroFind){
+        prod *= arr[i];
+      }
+    }
+    return arr.map((num, index) => {
+      if(index === zeroFind){
+        return prod;
+      }else{
+        return 0;
+      }
+    })
+  }
+  let prod = 1;
+  for (let i=0; i<arr.length; i++){
+    prod *= arr[i];
+  }
+  const newArr = arr.map(num => prod/num);
+  return newArr;
+};
+
+// O(n)
+// console.log(product([1, 0, 0, 4]));
