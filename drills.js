@@ -242,9 +242,42 @@ function twoDArray(array) {
   return array;
 }
 
-console.log(twoDArray([[1,0,1,1,0],
-  [0,1,1,1,0],
-  [1,1,1,1,1],
-  [1,0,1,1,1],
-  [1,1,1,1,1]]));
+// O(n^2)
+// console.log(twoDArray([[1,0,1,1,0],
+//   [0,1,1,1,0],
+//   [1,1,1,1,1],
+//   [1,0,1,1,1],
+//   [1,1,1,1,1]]));
+
+
+// String Rotation
+// recursion base case: original word
+// pop off last letter and append popped version to front
+
+function stringRotation(str1, str2, mutated = ''){
+  let char;
+  if(str1.length !== str2.length){
+    return false;
+  }
+  if(str1 === str2){
+    return true;
+  }
+  if(str1 === mutated){
+    return false;
+  }
+  if (mutated === ''){
+    mutated = str1;
+  }
+  char = mutated[mutated.length - 1];
+  mutated = char + mutated.slice(0, mutated.length-1);
+  if(mutated === str2){
+    return true;
+  }
+  return stringRotation(str1, str2, mutated);
+
+
+};
+
+// O(n)
+// console.log(stringRotation('amazon', 'azonma'));
   
