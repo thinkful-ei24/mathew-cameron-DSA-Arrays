@@ -44,6 +44,7 @@ function urlIfy(str) {
   return newStrArray.join('');
 }
 
+// Complexity: O(n)
 // console.log(urlIfy('this is A test '));
 
 // Filtering an Array
@@ -57,8 +58,11 @@ function filter(arr){
   return newArr;
 };
 
+// Complexity: O(n)
 // console.log(filter([1, 5, 7, 3, 9]));
 
+
+////////////////////////////////////////////////////////////////
 //Max sum in the array
 // largestNum = 0;
 // loop starting with 4 
@@ -90,5 +94,6 @@ function maxSum(arr) {
   return largestNum;
 }
 
+// Complexity: O(n^2)
 // console.log(maxSum([-53,-4,-6,-3,-5,-2,-1, 722]));
 
