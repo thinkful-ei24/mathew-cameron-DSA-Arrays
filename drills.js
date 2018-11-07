@@ -174,6 +174,7 @@ function removeCharacters(string, removalString) {
 // console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
 
+//////////////////////////////////
 // Product
 
 function product(arr){
@@ -203,3 +204,47 @@ function product(arr){
 
 // O(n)
 // console.log(product([1, 0, 0, 4]));
+
+
+//////////////////////////////////
+// 2D Array
+// for i from 0 to array.length
+//  for j from 0 to array[i].length
+//    if array[i][j] === 0
+//      rows.push(i)
+//      cols.push(j)
+// for i from 0 to array.length
+//  for j from 0 to array[i].length
+//    if i is in rows || j is in cols
+//      array[i][j] = 0;
+
+function twoDArray(array) {
+  let rows = [];
+  let columns = [];
+
+  for (let i=0; i < array.length; i++ ) {
+    for (let j=0; j < array[i].length; j++) {
+      if (array[i][j] === 0) {
+        rows.push(i);
+        columns.push(j);
+      }
+    }
+  }
+
+  for (let i=0; i < array.length; i++ ) {
+    for (let j=0; j < array[i].length; j++) {
+      if (rows.includes(i) || columns.includes(j)) {
+        array[i][j] = 0;
+      }
+    }
+  }
+
+  return array;
+}
+
+console.log(twoDArray([[1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]]));
+  
