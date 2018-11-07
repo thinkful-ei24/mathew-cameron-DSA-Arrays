@@ -97,3 +97,43 @@ function maxSum(arr) {
 // Complexity: O(n^2)
 // console.log(maxSum([-53,-4,-6,-3,-5,-2,-1, 722]));
 
+
+//////////////////////////////////
+// Merge Arrays
+// i, j as indices
+// while loop i<arr1.length, j<arr2.length
+// if(arr1[i] <= arr2[j]) => add it i++
+// otherwise add arr2[j] j++
+
+function merge(arr1, arr2){
+  let i=0;
+  let j=0;
+  let newArr = [];
+  while (i < arr1.length && j < arr2.length){
+    if(arr1[i] <= arr2[j]){
+      newArr.push(arr1[i]);
+      i++;
+    } else {
+      newArr.push(arr2[j]);
+      j++;
+    }
+  }
+  if(i< arr1.length){
+    for (let k=i; k<arr1.length; k++){
+      newArr.push(arr1[k]);
+    }
+  } else if(j<arr2.length){
+    for (let k=i; k<arr1.length; k++){
+      newArr.push(arr2[k]);
+    }
+  }
+  return newArr;
+};
+
+// O(n) 
+// console.log(merge([11, 12, 13, 14], [2, 3, 5, 8, 9, 10]));
+
+
+
+//
+
